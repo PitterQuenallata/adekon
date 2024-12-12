@@ -13,12 +13,28 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->unsignedBigInteger('role_id')->nullable();
+            // Campos adicionales
+            $table->string('first_name', 100);
+            $table->string('last_name', 100);
+            $table->string('last_mader_name', 100);
+            $table->string('phone', 50);
+            $table->string('photo', 255);
+
+            // Campos estándar Breeze
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            $table->boolean('status')->default(true);
+
             $table->rememberToken();
             $table->timestamps();
+
+            // Clave foránea a roles (ajusta si tu PK de roles es diferente)
+            $table->foreign('role_id')->references('id_rol')->on('roles')->onDelete('set null');
+
+
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -42,6 +58,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('users', function(Blueprint $table){
+            $table->dropForeign(['role_id']);
+        });
+
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');

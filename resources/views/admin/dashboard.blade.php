@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin - ADEKON</title>
-</head>
-<body>
-    <h1>Panel Administrativo</h1>
-</body>
-</html>
+@extends('admin.layouts.app')
+
+
+
+@section('contenido')
+    <h1>Bienvenido al Panel Admin</h1>
+    <p>Aquí van las métricas y estadísticas.</p>
+@endsection
