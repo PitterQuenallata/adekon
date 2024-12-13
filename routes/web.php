@@ -29,6 +29,14 @@ Route::get('admin', function() {
 Auth::routes();
 
 
+// Usuarios
+Route::get('admin/Perfil', function () {
+    return view('admin.modules.users.perfil');
+})->name('Perfil');
+Route::POST('admin/Perfil', [UsuariosController::class, 'ActualizarPerfil']);
+
+
+
 Route::get('Categorias', action: [CategoriasController::class, 'index']);
 //Route::get('Proveedores', action: [ProveedoresController::class, 'index']);
 Route::get('Marcas', action: [MarcasController::class, 'index']);

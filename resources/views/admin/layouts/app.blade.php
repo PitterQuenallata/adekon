@@ -145,6 +145,7 @@
     <script src="{{ url('admins/js/modelo.js') }}"></script>
     <script src="{{ url('admins/js/diseno.js') }}"></script>
     <script src="{{ url('admins/js/producto.js') }}"></script>
+    <script src="{{ url('admins/js/usuario.js') }}"></script>
 
 
     {{--@if (session('success'))

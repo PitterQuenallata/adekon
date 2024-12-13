@@ -5,15 +5,15 @@
             <!-- Brand Logo -->
             <div class="logo-box">
                 <!-- Brand Logo Light -->
-                <a href="{{ url('Inicio') }}" class="logo-light">
-                    <img src="{{ url('admins/assets/images/logo-light.png') }}" alt="logo" class="logo-lg" height="32">
-                    <img src="{{ url('admins/assets/images/logo-light-sm.png') }}" alt="small logo" class="logo-sm" height="32">
+                <a href="{{ url('dashboard') }}" class="logo-light">
+                    <img src="{{ url('dekonLogo.png')}}" alt="logo" class="logo-lg" height="32">
+                    <img src="{{ url('dekonLogo.png')}}" alt="small logo" class="logo-sm" height="32">
                 </a>
 
                 <!-- Brand Logo Dark -->
-                <a href="{{ url('Inicio') }}" class="logo-dark">
-                    <img src="{{ url('admins/assets/images/logo-dark.png') }}" alt="dark logo" class="logo-lg" height="32">
-                    <img src="{{ url('admins/assets/images/logo-dark-sm.png') }}" alt="small logo" class="logo-sm" height="32">
+                <a href="{{ url('dashboard') }}" class="logo-dark">
+                    <img src="{{ url('dekonLogo.png')}}" alt="dark logo" class="logo-lg" height="32">
+                    <img src="{{ url('dekonLogo.png')}}" alt="small logo" class="logo-sm" height="32">
                 </a>
             </div>
 
@@ -208,7 +208,7 @@
                     @if (auth()->check() && (auth()->user()->foto == '' || auth()->user()->foto == null))
                         <img src="{{ url('admins/storage/users/avatar0.jpg') }}" alt="user-image" class="rounded-circle">
                     @else
-                        <img src="{{ url('admins/storage/' . auth()->user()->foto) }}" alt="user-image" class="rounded-circle">
+                        <img src="{{ url(auth()->user()->foto) }}" alt="user-image" class="rounded-circle">
                     @endif
 
                     <span class="ms-1 d-none d-md-inline-block">
@@ -225,7 +225,7 @@
                     </div>
 
                     <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                    <a href="{{ route('Perfil') }}" class="dropdown-item notify-item">
                         <i data-lucide="user" class="font-size-16 me-2"></i>
                         <span>Mis datos</span>
                     </a>
