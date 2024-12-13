@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('admin.layouts.app')
 
 @section('contenido')
     <div class="px-3">
@@ -188,8 +188,8 @@
                                     <label class="form-label">Diseño</label>
                                     <select class="form-control" name="id_diseño">
                                         <option value="">Seleccione un diseño</option>
-                                        @foreach ($diseños as $diseño)
-                                            <option value="{{ $diseño->id_diseño }}">{{ $diseño->nombre_diseño }}</option>
+                                        @foreach ($disenos as $diseno)
+                                            <option value="{{ $diseno->id_diseno }}">{{ $diseno->nombre_diseno }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -302,8 +302,8 @@
                                     <label class="form-label">Diseño</label>
                                     <select class="form-control" id="editarDiseño" name="id_diseño">
                                         <option value="">Seleccione un diseño</option>
-                                        @foreach ($diseños as $diseño)
-                                            <option value="{{ $diseño->id_diseño }}">{{ $diseño->nombre_diseño }}
+                                        @foreach ($disenos as $diseno)
+                                            <option value="{{ $diseno->id_diseno }}">{{ $diseno->nombre_diseno }}
                                             </option>
                                         @endforeach
                                     </select>

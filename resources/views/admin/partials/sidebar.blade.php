@@ -3,14 +3,14 @@
     <div class="logo-box">
         <!-- Brand Logo Light -->
         <a href="{{ url('Inicio') }}"class="logo-light">
-            <img src="assets/images/logo-light.png" alt="logo" class="logo-lg" height="32">
-            <img src="assets/images/logo-light-sm.png" alt="small logo" class="logo-sm" height="32">
+            <img src="{{ url('dekonLogo.png')}}" alt="logo" class="logo-lg" height="50">
+            <img src="{{ url('dekonLogo.png')}}" alt="small logo" class="logo-sm" height="20">
         </a>
 
         <!-- Brand Logo Dark -->
         <a href="{{ url('Inicio') }}" class="logo-dark">
-            <img src="assets/images/logo-dark.png" alt="dark logo" class="logo-lg" height="32">
-            <img src="assets/images/logo-dark-sm.png" alt="small logo" class="logo-sm" height="32">
+            <img src="{{ url('dekonLogo.png')}}" alt="dark logo" class="logo-lg" height="50">
+            <img src="{{ url('dekonLogo.png')}}" alt="small logo" class="logo-sm" height="20">
         </a>
     </div>
 

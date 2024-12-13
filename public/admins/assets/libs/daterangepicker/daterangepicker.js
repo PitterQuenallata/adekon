@@ -28,10 +28,11 @@
         // Browser globals
         root.daterangepicker = factory(root.moment, root.jQuery);
     }
-}(this, function(moment, $) {
+}(typeof window !== 'undefined' ? window : this, function(moment, $) {
     var DateRangePicker = function(element, options, cb) {
 
         //default settings for options
+        
         this.parentEl = 'body';
         this.element = $(element);
         this.startDate = moment().startOf('day');
@@ -70,15 +71,15 @@
 
         this.locale = {
             direction: 'ltr',
-            format: moment.localeData().longDateFormat('L'),
+            format: moment.localeData().longDateFormat('L'), // Formato de fecha
             separator: ' - ',
-            applyLabel: 'Apply',
-            cancelLabel: 'Cancel',
-            weekLabel: 'W',
-            customRangeLabel: 'Custom Range',
-            daysOfWeek: moment.weekdaysMin(),
-            monthNames: moment.monthsShort(),
-            firstDay: moment.localeData().firstDayOfWeek()
+            applyLabel: 'Aplicar',
+            cancelLabel: 'Cancelar',
+            weekLabel: 'S',
+            customRangeLabel: 'Rango Personalizado',
+            daysOfWeek: moment.localeData().weekdaysMin(), // Nombres abreviados de días
+            monthNames: moment.localeData().months(), // Nombres completos de meses
+            firstDay: moment.localeData().firstDayOfWeek() // Primer día de la semana
         };
 
         this.callback = function() { };

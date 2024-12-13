@@ -1,4 +1,5 @@
-@extends('welcome')
+@extends('admin.layouts.app')
+
 
 @section('contenido')
     <div class="px-3">

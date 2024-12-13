@@ -24,7 +24,7 @@ $(".tablas").on("click", ".btnEditarProducto", function () {
             $("#editarMarca").val(producto.id_marca);
             $("#editarCategoria").val(producto.id_categoria);
             $("#editarModelo").val(producto.id_modelo);
-            $("#editarDiseño").val(producto.id_diseño);
+            $("#editarDiseño").val(producto.id_diseno);
             $("#editarDescripcion").val(producto.descripcion_producto);
             $("#editarStock").val(producto.stock_producto);
             $("#editarPrecio").val(producto.precio_producto);

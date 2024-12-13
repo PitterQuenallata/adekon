@@ -205,15 +205,17 @@
                 <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown"
                     href="#" role="button" aria-haspopup="false" aria-expanded="false">
 
-                    {{--@if (auth()->check() && (auth()->user()->foto == '' || auth()->user()->foto == null))
-                        <img src="{{ url('admins/storage/users/anonymous.png') }}" alt="user-image" class="rounded-circle">
+                    @if (auth()->check() && (auth()->user()->foto == '' || auth()->user()->foto == null))
+                        <img src="{{ url('admins/storage/users/avatar0.jpg') }}" alt="user-image" class="rounded-circle">
                     @else
                         <img src="{{ url('admins/storage/' . auth()->user()->foto) }}" alt="user-image" class="rounded-circle">
-                    @endif--}}
+                    @endif
 
-                    <span class="ms-1 d-none d-md-inline-block">Amigo
-                       <i class="mdi mdi-chevron-down"></i>
+                    <span class="ms-1 d-none d-md-inline-block">
+                        {{ strtoupper(auth()->user()->first_name) }} {{ strtoupper(auth()->user()->last_name) }} {{ strtoupper(auth()->user()->last_mader_name) }}
+                        <i class="mdi mdi-chevron-down"></i>
                     </span>
+
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
@@ -234,13 +236,13 @@
                     <div class="dropdown-divider"></div>
 
                     <!-- item-->
-                    <a href="#" class="dropdown-item notify-item"
+                    <a href="{{ route('logout') }}" class="dropdown-item notify-item"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i data-lucide="log-out" class="font-size-16 me-2"></i>
                         <span>Cerrar sesion</span>
 
-                        <form method="post" id="logout-form" action="">
-                        
+                        <form method="post" id="logout-form" action="{{ route('logout') }}">
+                            @csrf
                         </form>
 
                     </a>

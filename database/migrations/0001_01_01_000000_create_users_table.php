@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('first_name', 100);
             $table->string('last_name', 100);
             $table->string('last_mader_name', 100);
-            $table->string('phone', 50);
-            $table->string('photo', 255);
+            $table->string('username', 100)->unique();
+            $table->string('telefono', 50);
+            $table->string('foto', 255)->nullable();
 
             // Campos estándar Breeze
             $table->string('email')->unique();
@@ -27,6 +28,7 @@ return new class extends Migration
             $table->string('password');
 
             $table->boolean('status')->default(true);
+            $table->text('ultimo_acceso')->nullable();
 
             $table->rememberToken();
             $table->timestamps();
